@@ -8,8 +8,6 @@ stringData:
     HASS_ELEVATION: ENC[AES256_GCM,data:Mdmq,iv:784T/92KWZJMo7hMgBt8ZVlCXNwJf2l93cmGeXWpZdA=,tag:ncUqI/jHBkftRfYg3ZC4SA==,type:str]
     HASS_LATITUDE: ENC[AES256_GCM,data:Jdw7Xirnw38obtNnuS3W6WY=,iv:yxraoJHjdAZjwYSowOxFY70bifioo/R27nJ+yjJofNQ=,tag:/jRLu7R7vq550ZWptDS+tQ==,type:str]
     HASS_LONGITUDE: ENC[AES256_GCM,data:zSu3SBjY6vte0ZoxoIO6ShBZ,iv:CufCCNSyY5sfTlhCA5Sg+1zpwiJ+cI2+odSz4yCImjc=,tag:Eie07lphC07Csz0jrijXCQ==,type:str]
-    HASS_MQTT_PASSWORD: ENC[AES256_GCM,data:fpLS72VNbtuDAQkqOkn8uQ8hwqLTd4qfoA==,iv:oiG+aYCXFT65IgRXkRqUMuQJA7AZPxbtzxta/maIROI=,tag:+SBqvZBKny+LnvjFeS3ztQ==,type:str]
-    HASS_MQTT_USERNAME: ENC[AES256_GCM,data:T64vIrpi,iv:1Va6PIcDvpvaqzRdGB+jTOUgvwK++DVhsTkq1moQfgg=,tag:aHSM+XVxVxEWpJMzUJ1GMg==,type:str]
     HASS_OPENGARAGE_DEVICE_KEY: ENC[AES256_GCM,data:DsR5zpL6BqOkLZEcu27z,iv:42AU5hCOzGaeUvXMW+4YBMdli09c72mRyzAwOlpTr4Y=,tag:vbC85mpzs3jPmc9NGG4jbg==,type:str]
     HASS_OPENGARAGE_HOST: ENC[AES256_GCM,data:S69WR1BYjh9Wo9LzmQ==,iv:KKX3r67VKiXwph6k1XC/KgeXWc5aisJstvF0sitnqDc=,tag:qm4Ds/wKDkK7z8IiFSV5QA==,type:str]
     HASS_POSTGRESQL_CONNECTION_STRING: ENC[AES256_GCM,data:32jup6y8pBNl4Ryagkz1RdX3mv/IVLbNDQHSsx1orPO1xud4sx1oX2PKFBIN3RN/P7UyuZ2EwMRfwD41M8YbjFL+oQUhr9vnEHXRVF0=,iv:VY3dkHTkOQygKH2pOSGtwYsdr7oIXEwU8NqyyczzWcg=,tag:WAPlEu9CS2+rUrzfV+mHGw==,type:str]
@@ -21,8 +19,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2021-10-29T14:04:40Z"
-    mac: ENC[AES256_GCM,data:XyM7esgOnK3g6yaFGLASIWUrjuqPj76SKtUPAPNTrdtPmiw1aVJeRjmuhBQTlUbj12W6+O6F71BTBGMq3elCzG/lfXaT7gFVSWApWx9QWk/NDZfwmJhCBjHoKV79vklUiiOJ6m9c09Yo1LeqC04/mLUjoaThfyO4xewlQXUWBJI=,iv:qSZf+rnwuiLsX9DhTuECPEcC++ijINxdMTA4uPHVTDs=,tag:39Pn+XEpoUzgZU2cqm+3iA==,type:str]
+    lastmodified: "2021-10-29T22:03:31Z"
+    mac: ENC[AES256_GCM,data:wlbbjHZckrc08ESOw+sA5IzYGJU2AsoA6oUln+DbCrn8kokpOhWLsAZcxdXI1Afseg6jO3TKGkt0rqInpaBgJauua24pyymaR62nUwNxerkXzFDLIJz9veUKvmZ0Fwc41G99HrKbY1d1BQ2pSyTwzeFVStjncMO6ZPc6yJMLdkM=,iv:IEbCcazYIHBzLWhu30egMVP4IRCY1qKYyh7a03ZyZE4=,tag:0UR84AKEZH57WmG2RNXtPQ==,type:str]
     pgp:
         - created_at: "2021-10-25T20:16:57Z"
           enc: |
