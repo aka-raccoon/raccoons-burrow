@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-settings
+  namespace: flux-system
+data:
+  #
+  NAS_ADDR: "192.168.53.80"
+  NAS_SHARE_MEDIARR: "/mnt/superstore/mediarr"
+  NAS_SHARE_PHOTOS: "/mnt/superstore/photos"
+  #
+  METALLB_LB_RANGE: "192.168.69.1-192.168.69.254"
+  METALLB_TRAEFIK_ADDR: "192.168.69.1"
+  METALLB_PLEX_ADDR: "192.168.69.5"
+  METALLB_QBITTORRENT_ADDR: "192.168.69.6"
+  METALLB_HASS_ADDR: "192.168.69.7"
+  #
+  NETWORK_MANAGEMENT_CIDR: "192.168.0.0/16"
+  #
+  K8S_CLUSTER_CIDR: "10.42.0.0/16"
+  K8S_SERVICE_CIDR: "10.43.0.0/16"
+  #
+  POD_SHARE_MEDIARR: "/media"
+  POD_SHARE_PHOTOS: "/photos"
+  POD_CERT_ENV: "production" # staging/production
+  #
+
+  VPN_GATEWAY_PORT: "1194"
+  VPN_PORT_QB: "56059"

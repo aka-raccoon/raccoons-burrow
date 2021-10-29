@@ -1,0 +1,86 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vaultwarden
+  namespace: services
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
+      chart: vaultwarden
+      version: 3.1.3
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      repository: ghcr.io/k8s-at-home/vaultwarden
+      tag: v1.22.2
+    env:
+      DATA_FOLDER: "config"
+      DOMAIN: https://vault.${SECRET_DOMAIN}
+      SIGNUPS_ALLOWED: "false"
+      SMTP_FROM_NAME: "🦝 RB: Vaultwarden"
+      SMTP_HOST: smtp.mailgun.org
+      SMTP_PORT: 587
+      SMTP_SSL: "true"
+      TZ: "${SECRET_TIMEZONE}"
+      WEBSOCKET_ADDRESS: 0.0.0.0
+      WEBSOCKET_ENABLED: true
+      WEBSOCKET_PORT: 3012
+      ENABLE_DB_WAL: FALSE
+    envFrom:
+      - secretRef:
+          name: vaultwarden
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: "traefik"
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-${POD_CERT_ENV}"
+          hajimari.io/enable: "true"
+          hajimari.io/icon: "shield-key"
+          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+        hosts:
+          - host: vault.${SECRET_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
+              - path: /notifications/hub
+                pathType: Prefix
+                service:
+                  port: 3012
+              - path: /notifications/hub/negotiate
+                pathType: Prefix
+        tls:
+          - hosts:
+              - vault.${SECRET_DOMAIN}
+            secretName: "plex-tls"
+      admin:
+        enabled: true
+        ingressClassName: "traefik"
+        annotations:
+          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+          traefik.ingress.kubernetes.io/router.middlewares: "networking-rfc1918@kubernetescrd"
+        hosts:
+          - host: "vaultwarden.${SECRET_DOMAIN}"
+            paths:
+              - path: /admin
+                pathType: Prefix
+        tls:
+          - hosts:
+              - "vault.${SECRET_DOMAIN}"
+    persistence:
+      config:
+        enabled: true
+        existingClaim: vaultwarden-config
+    resources:
+      requests:
+        memory: 100Mi
+        cpu: 100m
+      limits:
+        memory: 2000Mi

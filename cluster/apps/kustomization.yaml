@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - default
+  - downloads
+  - home-automation
+  - kube-system
+  - media
+  - networking
+  - services
+  - system-upgrade
+  - vpn-gateway

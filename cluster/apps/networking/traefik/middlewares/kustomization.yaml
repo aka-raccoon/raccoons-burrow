@@ -1,0 +1,9 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - basic-auth.yaml
+  - cloudflare.yaml
+  - redirect-path.yaml
+  - rfc1918.yaml
+  - secret.sops.yaml
