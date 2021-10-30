@@ -25,4 +25,4 @@ spec:
               service:
                 name: unifi
                 port:
-                  number: 8443
+                  number: 8080

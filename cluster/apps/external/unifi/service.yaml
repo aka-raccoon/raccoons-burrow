@@ -8,4 +8,4 @@ spec:
   type: ExternalName
   externalName: "${UNIFI_ADDR}"
   ports:
-    - port: 8443
+    - port: 8080
