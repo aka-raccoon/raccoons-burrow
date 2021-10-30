@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - default
   - downloads
+  - external
   - home-automation
   - kube-system
   - media

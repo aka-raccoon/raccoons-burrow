@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - cert-manager.yaml
   - downloads.yaml
+  - external.yaml
   - home-automation.yaml
   - media.yaml
   - metallb-system.yaml
