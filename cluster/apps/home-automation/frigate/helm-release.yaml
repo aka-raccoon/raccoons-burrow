@@ -90,14 +90,14 @@ spec:
             max_area: 100000
             threshold: 0.7
       # Global ffmpeg configuration
-      ffmpeg:
-        hwaccel_args:
-          - -hwaccel
-          - vaapi
-          - -hwaccel_device
-          - /dev/dri/renderD128
-          - -hwaccel_output_format
-          - yuv420p
+      # ffmpeg:
+      #   hwaccel_args:
+      #     - -hwaccel
+      #     - vaapi
+      #     - -hwaccel_device
+      #     - /dev/dri/renderD128
+      #     - -hwaccel_output_format
+      #     - yuv420p
        # Specify camera's
       cameras:
         # --
@@ -114,8 +114,8 @@ spec:
           rtmp:
             enabled: True
           detect:
-            width: 1280
-            height: 720
+            width: 640
+            height: 368
             fps: 10
           record:
             enabled: True
