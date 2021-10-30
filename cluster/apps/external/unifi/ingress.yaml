@@ -1,0 +1,28 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: unifi
+  namespace: external
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-${POD_CERT_ENV}"
+    hajimari.io/appName: "unifi"
+    hajimari.io/enable: "true"
+    hajimari.io/icon: "router-network"
+    traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+spec:
+  tls:
+    - hosts:
+        - "unifi.${SECRET_DOMAIN}"
+      secretName: "unifi-tls"
+  rules:
+    - host: "unifi.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: unifi
+                port:
+                  number: 8443

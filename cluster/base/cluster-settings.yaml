@@ -27,6 +27,7 @@ data:
   POD_SHARE_PHOTOS: "/photos"
   POD_CERT_ENV: "production" # staging/production
   #
-
   VPN_GATEWAY_PORT: "1194"
   VPN_PORT_QB: "56059"
+  #
+  UNIFI_ADDR: "192.168.53.30"
