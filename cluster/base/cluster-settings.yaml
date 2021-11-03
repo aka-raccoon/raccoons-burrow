@@ -10,6 +10,7 @@ data:
   NAS_SHARE_MEDIARR: "/mnt/superstore/mediarr"
   NAS_SHARE_PHOTOS: "/mnt/superstore/photos"
   NAS_SHARE_SURVEILLANCE: "/mnt/superstore/surveillance"
+  NAS_SHARE_WIKIJS: "/mnt/superstore/wikijs"
   #
   METALLB_LB_RANGE: "192.168.53.40-192.168.53.79"
   METALLB_TRAEFIK_ADDR: "192.168.53.41"
@@ -29,5 +30,8 @@ data:
   #
   VPN_GATEWAY_PORT: "1194"
   VPN_PORT_QB: "56059"
+  #
+  POSTGRES_ADDR: "192.168.53.90"
+  POSTGRES_PORT: "5432"
   #
   UNIFI_ADDR: "192.168.53.30"
