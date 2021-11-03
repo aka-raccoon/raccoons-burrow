@@ -23,7 +23,7 @@ spec:
     env:
       TZ: "${SECRET_TIMEZONE}"
       DB_TYPE: postgres
-      DB_NAME: "${POSTGRES_ADDR}"
+      DB_HOST: "${POSTGRES_ADDR}"
       DB_PORT: "${POSTGRES_PORT}"
     envFrom:
       - secretRef:
