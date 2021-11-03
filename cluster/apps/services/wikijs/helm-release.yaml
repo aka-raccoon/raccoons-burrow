@@ -25,9 +25,9 @@ spec:
       DB_TYPE: postgres
       DB_HOST: "${POSTGRES_ADDR}"
       DB_PORT: "${POSTGRES_PORT}"
-    envFrom:
-      - secretRef:
-          name: wikijs
+      DB_NAME: "wikijs"
+      DB_USER: "${SECRET_WIKIJS_DB_USER}"
+      DB_PASS: "${SECRET_WIKIJS_DB_PASS}"
     ingress:
       main:
         enabled: true
