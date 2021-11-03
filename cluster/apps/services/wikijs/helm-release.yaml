@@ -50,14 +50,14 @@ spec:
       config:
         enabled: true
         existingClaim: wikijs-config
-      data:
-        enabled: true
-        type: custom
-        volumeSpec:
-          nfs:
-            server: "${NAS_ADDR}"
-            path: "${NAS_SHARE_WIKIJS}"
-        mountPath: /app/wiki/data    
+      # data:
+      #   enabled: true
+      #   type: custom
+      #   volumeSpec:
+      #     nfs:
+      #       server: "${NAS_ADDR}"
+      #       path: "${NAS_SHARE_WIKIJS}"
+      #   mountPath: /app/wiki/data    
     resources:
       requests:
         memory: 100Mi
