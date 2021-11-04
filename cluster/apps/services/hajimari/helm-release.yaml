@@ -28,8 +28,10 @@ spec:
           - external
           - home-automation
           - media
+          - monitoring
           - networking
           - services
+          - tools
       name: "you"
     ingress:
       main:

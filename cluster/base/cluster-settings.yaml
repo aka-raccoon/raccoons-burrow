@@ -8,12 +8,14 @@ data:
   #
   NAS_ADDR: "192.168.53.80"
   NAS_SHARE_MEDIARR: "/mnt/superstore/mediarr"
+  NAS_SHARE_MINIO: "/mnt/superstore/minio"
   NAS_SHARE_PHOTOS: "/mnt/superstore/photos"
   NAS_SHARE_SURVEILLANCE: "/mnt/superstore/surveillance"
   NAS_SHARE_WIKIJS: "/mnt/superstore/wikijs"
   #
   METALLB_LB_RANGE: "192.168.53.40-192.168.53.79"
   METALLB_TRAEFIK_ADDR: "192.168.53.41"
+  METALLB_SYSLOG_ADDR: "192.168.53.42"
   METALLB_PLEX_ADDR: "192.168.53.45"
   METALLB_QBITTORRENT_ADDR: "192.168.53.46"
   METALLB_HASS_ADDR: "192.168.53.47"
@@ -33,5 +35,7 @@ data:
   #
   POSTGRES_ADDR: "192.168.53.90"
   POSTGRES_PORT: "5432"
+  #
+  COREDNS_ADDR: "192.168.53.30"
   #
   UNIFI_ADDR: "192.168.53.30"
