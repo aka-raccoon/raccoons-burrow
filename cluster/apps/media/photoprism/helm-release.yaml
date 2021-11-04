@@ -23,7 +23,6 @@ spec:
     env:
       TZ: "${SECRET_TIMEZONE}"
       PHOTOPRISM_DATABASE_DRIVER: "mysql"
-      PHOTOPRISM_SITE_URL: "p.${SECRET_DOMAIN}"
       PHOTOPRISM_DEBUG: "false"
       PHOTOPRISM_SITE_TITLE: "Raccoons Burrow 🦝"
       PHOTOPRISM_ORIGINALS_PATH: "${POD_SHARE_PHOTOS}"
