@@ -28,6 +28,7 @@ spec:
       PHOTOPRISM_SITE_TITLE: "Raccoons Burrow 🦝"
       PHOTOPRISM_ORIGINALS_PATH: "${POD_SHARE_PHOTOS}"
       PHOTOPRISM_DISABLE_WEBDAV: "false"
+      PHOTOPRISM_SITE_URL: "https://p.${SECRET_DOMAIN}"
     envFrom:
       - secretRef:
           name: photoprism
