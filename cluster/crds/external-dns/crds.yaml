@@ -2,24 +2,24 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  name: traefik-crd-source
+  name: external-dns-source
   namespace: flux-system
 spec:
   interval: 30m
-  url: https://github.com/traefik/traefik-helm-chart.git
+  # renovate: datasource=github-releases
+  url: https://github.com/kubernetes-sigs/external-dns.git
   ref:
-    # renovate: registryUrl=https://helm.traefik.io/traefik chart=traefik
-    tag: v10.6.0
+    tag: v0.10.1
   ignore: |
     # exclude all
     /*
-    # path to crds
-    !/traefik/crds/
+    # include deploy crds dir
+    !/docs/contributing/crd-source/crd-manifest.yaml
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: traefik-crds
+  name: external-dns-crds
   namespace: flux-system
 spec:
   interval: 15m
@@ -27,4 +27,4 @@ spec:
   wait: true
   sourceRef:
     kind: GitRepository
-    name: traefik-crd-source
+    name: external-dns-source
