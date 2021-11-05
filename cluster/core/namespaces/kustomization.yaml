@@ -7,7 +7,6 @@ resources:
   - external.yaml
   - home-automation.yaml
   - media.yaml
-  - metallb-system.yaml
   - monitoring.yaml
   - networking.yaml
   - services.yaml
