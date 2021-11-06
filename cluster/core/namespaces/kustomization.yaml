@@ -9,6 +9,7 @@ resources:
   - media.yaml
   - monitoring.yaml
   - networking.yaml
+  - security.yaml
   - services.yaml
   - tools.yaml
   - vpn-gateway.yaml
