@@ -21,10 +21,10 @@ spec:
       repository: public.ecr.aws/emqx/emqx
     replicaCount: 2
     recreatePods: true
-    service:
-      type: LoadBalancer
-      externalIPs:
-        - "${METALLB_EMQX_ADDR}"
+    # service:
+    #   type: LoadBalancer
+    #   externalIPs:
+    #     - "${METALLB_EMQX_ADDR}"
     emqxConfig:
       EMQX_ALLOW_ANONYMOUS: "false"
       EMQX_ADMIN_PASSWORD: "${SECRET_EMQX_ADMIN_PASSWORD}"
