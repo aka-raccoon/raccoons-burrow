@@ -5,6 +5,7 @@ resources:
   - calico-system
   - downloads
   - external
+  - flux-system
   - home-automation
   - kube-system
   - media
