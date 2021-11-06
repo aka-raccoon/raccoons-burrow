@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - blackbox-exporter
   # - botkube
-  - falco-system
   - grafana
   - kube-prometheus-stack
   - loki
