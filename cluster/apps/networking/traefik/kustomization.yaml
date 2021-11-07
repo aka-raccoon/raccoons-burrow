@@ -5,3 +5,5 @@ resources:
   - helm-release.yaml
   - dashboard
   - middlewares
+  - service-monitor.yaml
+  - prometheus-rule.yaml
