@@ -28,14 +28,14 @@ spec:
         - 44
         - 109
         - 100
-    # service:
-    #   main:
-    #     type: LoadBalancer
-    #     externalIPs:
-    #       - "${METALLB_PLEX_ADDR}"
-    #     externalTrafficPolicy: Local
-    #     annotations:
-    #       traefik.ingress.kubernetes.io/service.serversscheme: https
+    service:
+      main:
+        type: LoadBalancer
+        externalIPs:
+          - "${METALLB_PLEX_ADDR}"
+        externalTrafficPolicy: Local
+        annotations:
+          traefik.ingress.kubernetes.io/service.serversscheme: https
     ingress:
       main:
         enabled: true
