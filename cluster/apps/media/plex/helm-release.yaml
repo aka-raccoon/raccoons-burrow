@@ -23,6 +23,7 @@ spec:
     env:
       TZ: "${SECRET_TIMEZONE}"
       ADVERTISE_IP: "http://${METALLB_PLEX_ADDR}:32400/,https://plex.${SECRET_DOMAIN}/"
+      PLEX_CLAIM: "${SECRET_PLEX_CLAIM}"
     podSecurityContext:
       supplementalGroups:
         - 44
