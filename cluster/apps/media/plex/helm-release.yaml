@@ -76,10 +76,12 @@ spec:
         requiredDuringSchedulingIgnoredDuringExecution:
           nodeSelectorTerms:
             - matchExpressions:
-                - key: kubernetes.io/hostname
+                - key: feature.node.kubernetes.io/custom-intel-gpu
                   operator: In
                   values:
-                    - r8s-worker-1
+                    - 'true'      
+                - key: node-role.kubernetes.io/control-plane
+                  operator: DoesNotExist
     resources:
       requests:
         gpu.intel.com/i915: 1
