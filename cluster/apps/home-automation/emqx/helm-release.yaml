@@ -43,9 +43,17 @@ spec:
     persistence:
       enabled: true
       size: 100Mi
-      existingClaim: frigate-config
+      existingClaim: emqx-config
       accessMode: ReadWriteOnce
     affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:    
+                - key: node-role.kubernetes.io/master
+                  operator: NotIn
+                  values:
+                    - "true"
       podAntiAffinity:
         preferredDuringSchedulingIgnoredDuringExecution:
           - weight: 100

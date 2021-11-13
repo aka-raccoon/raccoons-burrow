@@ -198,3 +198,12 @@ spec:
             static_configs:
               - targets:
                   - "${NAS_ADDR}:9100"
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:    
+                - key: node-role.kubernetes.io/master
+                  operator: NotIn
+                  values:
+                    - "true"

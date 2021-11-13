@@ -106,3 +106,12 @@ spec:
         memory: 100Mi
       limits:
         memory: 4000Mi
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:    
+                - key: node-role.kubernetes.io/master
+                  operator: NotIn
+                  values:
+                    - "true"

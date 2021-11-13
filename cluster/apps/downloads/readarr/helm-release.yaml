@@ -55,3 +55,12 @@ spec:
             server: "${NAS_ADDR}"
             path: "${NAS_SHARE_MEDIARR}"
         mountPath: "${POD_SHARE_MEDIARR}"
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:    
+                - key: node-role.kubernetes.io/master
+                  operator: NotIn
+                  values:
+                    - "true"

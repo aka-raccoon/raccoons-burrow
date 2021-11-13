@@ -53,3 +53,12 @@ spec:
         memory: 500Mi
     podAnnotations:
       useVpnGateway: "true"
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:    
+                - key: node-role.kubernetes.io/master
+                  operator: NotIn
+                  values:
+                    - "true"

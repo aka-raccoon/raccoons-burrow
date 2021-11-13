@@ -24,7 +24,7 @@ spec:
     config:
       recommendations: false
       settings:
-        clustername: home-cluster
+        clustername: "Raccons Burrow"
         kubectl:
           enabled: true
           restrictAccess: true
