@@ -49,15 +49,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: wikijs-config
-      # data:
-      #   enabled: true
-      #   type: custom
-      #   volumeSpec:
-      #     nfs:
-      #       server: "${NAS_ADDR}"
-      #       path: "${NAS_SHARE_WIKIJS}"
-      #   mountPath: /app/wiki/data    
+        existingClaim: wikijs-config 
     resources:
       requests:
         memory: 100Mi
