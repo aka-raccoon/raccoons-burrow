@@ -1,0 +1,10 @@
+apiVersion: gemini.fairwinds.com/v1beta1
+kind: SnapshotGroup
+metadata:
+  name: readarr-backup
+spec:
+  persistentVolumeClaim:
+    claimName: readarr-config
+  schedule:
+    - every: day
+      keep: 3
