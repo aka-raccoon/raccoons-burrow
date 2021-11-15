@@ -7,5 +7,7 @@ spec:
   persistentVolumeClaim:
     claimName: readarr-config
   schedule:
+    - every: "10 minutes"
+      keep: 3  
     - every: day
       keep: 3
