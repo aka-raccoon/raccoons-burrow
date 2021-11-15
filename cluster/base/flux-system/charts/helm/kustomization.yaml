@@ -8,6 +8,7 @@ resources:
   - deliveryhero-charts.yaml
   - emqx-charts.yaml
   - falco-security-charts.yaml
+  - gemini-charts.yaml
   - grafana-charts.yaml
   - hajimari-charts.yaml
   - infracloudio-charts.yaml
