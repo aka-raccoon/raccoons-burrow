@@ -19,7 +19,7 @@ spec:
   values:
     image:
       repository: photoprism/photoprism
-      tag: "20211018"
+      tag: "20211210"
     env:
       TZ: "${SECRET_TIMEZONE}"
       PHOTOPRISM_DATABASE_DRIVER: "mysql"
