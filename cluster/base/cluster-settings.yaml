@@ -7,6 +7,7 @@ metadata:
 data:
   #
   NAS_ADDR: "192.168.53.80"
+  NAS_SHARE_BACKUP: "/mnt/superstore/apps-backup"
   NAS_SHARE_MEDIARR: "/mnt/superstore/mediarr"
   NAS_SHARE_MINIO: "/mnt/superstore/minio"
   NAS_SHARE_PHOTOS: "/mnt/superstore/photos"

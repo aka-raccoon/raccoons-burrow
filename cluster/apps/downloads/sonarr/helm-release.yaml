@@ -48,21 +48,6 @@ spec:
     podSecurityContext:
       supplementalGroups:
         - 100
-    # metrics:
-    #   enabled: true
-    #   serviceMonitor:
-    #     interval: 3m
-    #     scrapeTimeout: 1m
-    #   prometheusRule:
-    #     enabled: true
-    #   exporter:
-    #     image:
-    #       repository: ghcr.io/onedr0p/exportarr
-    #       tag: v0.6.1
-    #     env:
-    #       port: 9794
-    #       additionalMetrics: true
-    #       unknownQueueItems: false
     persistence:
       config:
         enabled: true
@@ -75,12 +60,15 @@ spec:
             server: "${NAS_ADDR}"
             path: "${NAS_SHARE_MEDIARR}"
         mountPath: "${POD_SHARE_MEDIARR}"
-    # podAnnotations:
-    #   backup.velero.io/backup-volumes: config
-    #   pre.hook.backup.velero.io/container: fsfreeze
-    #   pre.hook.backup.velero.io/command: '["/sbin/fsfreeze", "--freeze", "/config"]'
-    #   post.hook.backup.velero.io/container: fsfreeze
-    #   post.hook.backup.velero.io/command: '["/sbin/fsfreeze", "--unfreeze", "/config"]'
+      backup:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: "${NAS_ADDR}"
+            path: "${NAS_SHARE_BACKUP}/sonarr"
+        mountPath: /config/Backups
+        readOnly: false
     resources:
       requests:
         memory: 250Mi
@@ -91,7 +79,7 @@ spec:
       nodeAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
           nodeSelectorTerms:
-            - matchExpressions:    
+            - matchExpressions:
                 - key: node-role.kubernetes.io/master
                   operator: NotIn
                   values:
